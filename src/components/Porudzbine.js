@@ -18,17 +18,17 @@ function PorudzbineTable() {
         console.log(token);
         console.log(porudzbina)
         console.log(porudzbina.korisnik.ime + " " + porudzbina.korisnik.prezime)
-        axios.post("http://localhost:8083/payment/charge", { description: "OPIS" }, {
+        axios.post("http://localhost:8083/payment/charge", "", {
             headers: {
                 token: token.id,
-                amount: 500,
+                amount: porudzbina.ukupnaCena,
                 Authorization: "Bearer " + getToken()
             },
         }).then(() => {
             porudzbina.statusNaplate = true;
             console.log(porudzbina.statusNaplate);
             putPorudzbina(porudzbina);
-            alert("Payment Success");
+            alert("Naplata je uspesna");
             window.location.reload();
         }).catch((error) => {
             console.log(error.message);

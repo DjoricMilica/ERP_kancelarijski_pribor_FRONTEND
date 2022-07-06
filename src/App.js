@@ -13,6 +13,7 @@ import DlgIzmenaProizvoda from "./components/DlgIzmenaProizvoda";
 import Korpa from "./components/Korpa";
 import { getKorisnici } from "./services/korisnik-service";
 import { useEffect } from "react";
+import Placanja from "./components/Placanja";
 
 function App() {
 	const [statusLogovanja, setStatusLogovanja] =
@@ -60,6 +61,7 @@ function App() {
 					<Route exact path="" element={<PocetnaStrana></PocetnaStrana>}></Route>
 					<Route exact path="izmenaProizvoda" element={< DlgIzmenaProizvoda proizvod={proizvodZaIzmenu}></ DlgIzmenaProizvoda>}></Route>
 					<Route exact path="korpa" element={<Korpa ></Korpa>}></Route>
+					<Route exact path="placanja" element={<Placanja></Placanja>}></Route>
 				</Routes>
 			</BrowserRouter>
 		</div >
